@@ -17,7 +17,7 @@ export class OrderService {
 
     async createOrder(data: any): Promise<void> {
         const order = new Order(
-            0, // borrow_id (auto-increment)
+            0, 
             data.userId,
             parseInt(data.bookId),
             new Date(data.borrowDate)
