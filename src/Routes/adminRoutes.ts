@@ -26,7 +26,5 @@ router.post('/users/:userId/delete', userCntrl.deleteUser);
 router.get('/orders',orderCntrl.viewOrders);
 router.post('/orders', orderCntrl.addOrder);
 router.post('/orders/:id/edit', orderCntrl.editOrder);
-// router.post('/orders/:id/return', orderCntrl.returnBook);
-
 
 export default router;
