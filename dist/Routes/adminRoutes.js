@@ -1,0 +1,27 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const loginController_1 = require("../Controllers/loginController");
+const bookController_1 = require("../Controllers/bookController");
+const userController_1 = require("../Controllers/userController");
+const orderController_1 = require("../Controllers/orderController");
+const router = (0, express_1.Router)();
+const bookCntrl = new bookController_1.bookController();
+const controller = new loginController_1.loginController();
+const userCntrl = new userController_1.userController();
+const orderCntrl = new orderController_1.orderController();
+router.get('/', controller.login);
+router.post('/login', controller.postlogin);
+router.get('/books', bookCntrl.viewbook);
+router.post('/books', bookCntrl.addbook);
+router.post('/books/:id/edit', bookCntrl.editbook);
+router.post('/books/:id/delete', bookCntrl.deletebook);
+router.get('/users', userCntrl.viewUsers);
+router.post('/users', userCntrl.addUser);
+router.post('/users/:userId/edit', userCntrl.editUser);
+router.post('/users/:userId/delete', userCntrl.deleteUser);
+router.get('/orders', orderCntrl.viewOrders);
+router.post('/orders', orderCntrl.addOrder);
+router.post('/orders/:id/edit', orderCntrl.editOrder);
+exports.default = router;
+//# sourceMappingURL=adminRoutes.js.map
